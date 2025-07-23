@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package android.bundle;
 
-import "targeting.proto";
+import "android/bundle/targeting.proto";
 
 option java_package = "com.android.bundle";
 

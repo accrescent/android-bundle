@@ -4,4 +4,4 @@ modules:
     name: buf.build/accrescent/android-bundle
 lint:
   ignore:
-    - .
+    - android/bundle
