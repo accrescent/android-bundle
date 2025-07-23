@@ -1,0 +1,7 @@
+version: v2
+modules:
+  - path: .
+    name: buf.build/accrescent/android-bundle
+lint:
+  ignore:
+    - .
