@@ -6,6 +6,8 @@ version: v2
 modules:
   - path: .
     name: buf.build/accrescent/android-bundle
+deps:
+  - buf.build/bufbuild/protovalidate:v1.0.0
 lint:
   ignore:
     - android/bundle
