@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package android.bundle;
 
+import "buf/validate/validate.proto";
 import "google/protobuf/wrappers.proto";
 
 option java_package = "com.android.bundle";
@@ -10,10 +11,10 @@ message DeviceSpec {
   // Supported ABI architectures in the order of preference.
   // The values should be the string as reported by the platform, e.g.
   // "armeabi-v7a" or "x86_64".
-  repeated string supported_abis = 1;
+  repeated string supported_abis = 1 [(buf.validate.field).repeated.min_items = 1];
 
   // All installed locales represented as BCP-47 strings.
-  repeated string supported_locales = 2;
+  repeated string supported_locales = 2 [(buf.validate.field).repeated.min_items = 1];
 
   // List of device features returned by the package manager utility.
   repeated string device_features = 3;
@@ -22,10 +23,10 @@ message DeviceSpec {
   repeated string gl_extensions = 4;
 
   // Screen dpi.
-  uint32 screen_density = 5;
+  uint32 screen_density = 5 [(buf.validate.field).uint32.gt = 0];
 
   // getprop ro.build.version.sdk
-  uint32 sdk_version = 6;
+  uint32 sdk_version = 6 [(buf.validate.field).uint32.gt = 0];
 
   // getprop ro.build.version.codename
   string codename = 7;
